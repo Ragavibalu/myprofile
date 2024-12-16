@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragavi B - Portfolio</title>
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            position: static;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+
+
+        }
+
+        header {
+            background-color: #1e1e1e;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            background-color: #4CAF50;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #4CAF50 0%, #1e1e1e 100%);
+            clip-path: ellipse(90% 100% at 50% 0%);
+            color: #ffffff;
+        }
+
+        .hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+           .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .hire-me-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hire-me-button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+        
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+
+            
+        }
+
+        .skills, .experience, .education, .achievements, .certifications, .about, .project, .contact{
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .section-item {
+            background-color: #2c2c2c;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            width: calc(33.333% - 20px);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        @media screen and (max-width: 768px) {
+            .section-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .section-item {
+                width: 100%;
+            }
+        }
+        .justified-text {
+    text-align: justify;
+}
+/* Project Section */
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between images */
+    margin-top: 20px;
+}
+.project-title {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #4CAF50; /* Adjust color as needed */
+    font-weight: bold;
+    text-align: center;
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px 10px 0 0;
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px 10px 0 0;}
+.project-info {
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 0 0 10px 10px;
+}
+
+.project-info h4 {
+    font-size: 1.2em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 0.95em;
+    color: #d3d3d3;
+    line-height: 1.4;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Hover effect */
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3);
+}
+
+.project-item:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        flex: 1 1 calc(50% - 20px); /* Adjusts to fit 2 images per row on tablets */
+    }
+}
+@media (max-width: 768px) {
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-item {
+        flex: 1 1 100%; /* Adjusts to fit 1 image per row on mobile */
+    }
+}
+.contact {
+            text-align: center;
+            padding: 40px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        
+        .contact a:hover {
+            color: #ffffff;
+        }
+
+        .contact p {
+            margin: 15px 0;
+        }
+
+        .contact-info {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animated {
+            animation: fadeIn 1s ease-out;
+        }
+
+        footer {
+            background-color: #4CAF50; /* Same green as the nav bar */
+            color: #ffffff;
+            
+            padding: 20px 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content{
+          text-align: center;
+            margin: 0;
+            font-size: 1em;
+        }
+
+            
+
+            </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+       
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container animated">
+                <img src="C:\Users\Ragavi\Downloads\studies document\ragaviportfolio\rags.JPG" alt="Ragavi B">
+                <h1>Ragavi B</h1>
+                <h3>Aspiring Electronics Engineer | Web Developer | Embedded Systems Enthusiast</h3>
+                <a href="https://drive.google.com/file/d/1UUBgsJh54q5duguXf7wra5b2TdHqToMw/view?usp=sharing" class="hire-me-button" target="_blank">Hire Me</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About</h2>
+                <div class="about">
+                    <p class="justified-text">I am an Electronics and Communication Engineering student at Kongu Engineering College with a strong passion for technology and innovation. I have developed skills in embedded systems, web development, and programming through hands-on projects and coursework. My involvement in professional societies like IETE, ISTE, and NSS has enriched my experience in collaborative projects. I am eager to apply my knowledge to solve real-world challenges and explore areas like IoT, VLSI design and Web development. My goal is to contribute to impactful technological solutions that drive efficiency and connectivity.</p>
+                </div>
+            </div>
+        </section>
+<!-- Education Section -->
+        <section id="education">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="education section-list">
+                    <div class="section-item"><h4>Kongu Engineering College</h4><p>B.E. Electronics & Communication, CGPA: 8.52</p></div>
+                    <div class="section-item"><h4>Sowdambikaa Matric Hr Sec School</h4><p>Higher Secondary, 94.6%</p></div>
+                    <div class="section-item"><h4>Infant Jesus Matric Hr Sec School</h4><p>Secondary Education, 94.6%</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills section-list">
+                    <div class="section-item"><h4>Programming Languages</h4><p>C, Python</p></div>
+                    <div class="section-item"><h4>Web Technologies</h4><p>HTML, CSS, JavaScript, PHP</p></div>
+                    <div class="section-item"><h4>Hardware Skills</h4><p>LabVIEW, Cadence (Beginner)</p></div>
+                    <div class="section-item"><h4>Analysis & Simulation Tools</h4><p>LTSPICE, MATLAB</p></div>
+                </div>
+            </div>
+        </section>
+<!-- Project Section -->
+<section id="project">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project-gallery">
+            <!-- Project 1 -->
+            <div class="project-item">
+                <img src="C:\Users\Ragavi\Downloads\myportfolio\img2.png" alt="Project 1">
+                <div class="overlay">
+                    <h4>Project 1: PCB Design</h4>
+                    <p>Designed a custom PCB to optimize circuit performance.</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item">
+                <img src="C:\Users\Ragavi\Downloads\myportfolio\img1.png" alt="Project 2">
+                <div class="overlay">
+                    <h4>Project 2: Embedded Systems</h4>
+                    <p>Real-time monitoring system using microcontrollers.</p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item">
+                <img src="C:\Users\Ragavi\Downloads\myportfolio\img7.png" alt="Project 3">
+                <div class="overlay">
+                    <h4>Project 3: AI Prototype</h4>
+                    <p>AI model to predict and classify data patterns.</p>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-item">
+                <img src="C:\Users\Ragavi\Downloads\myportfolio\img5.jpg" alt="Project 4">
+                <div class="overlay">
+                    <h4>Project 4: Robotics Automation</h4>
+                    <p>Automated robotic systems for efficiency.</p>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-item">
+                <img src="C:\Users\Ragavi\Downloads\myportfolio\img4.png" alt="Project 5">
+                <div class="overlay">
+                    <h4>Project 5: IoT Monitoring</h4>
+                    <p>Smart home IoT system for real-time monitoring.</p>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-item">
+                <img src="C:\Users\Ragavi\Downloads\myportfolio\img8.jpg" alt="Project 6">
+                <div class="overlay">
+                    <h4>Project 6: VLSI Simulation</h4>
+                    <p>Optimized VLSI circuits to reduce power consumption.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="experience section-list">
+                    <div class="section-item"><h4>1Stop.ai - Web Development Intern</h4><p>Training in dynamic web applications, coding best practices.</p></div>
+                    <div class="section-item"><h4>Codesoft - Web Development Intern</h4><p>Contributed to front-end and back-end, enhanced design skills.</p></div>
+                    <div class="section-item"><h4>Digiload-Technologies</h4><p>Completed training on embedded AI systems using STMicroelectronics AI Ecosystem.</p></div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Achievements Section -->
+        <section id="achievements">
+            <div class="container">
+                <h2>Achievements</h2>
+                <div class="achievements section-list">
+                    <div class="section-item">3rd place in "ROBO SOCCER" at Electrofocus'23, MIT Chennai</div>
+                    <div class="section-item">Top 10 in "Ideathon - Proof of Concept" 2023, ECE Dept., KEC</div>
+                    <div class="section-item">Academic Excellence Award from Kongu Vellalar Trust, 2021-2022</div>
+                    <div class="section-item">Participated in Honeywell India Youth Techathon 2023 - BOT Building Competition</div>
+                    <div class="section-item">Honored on Annual Day 2023 for winning at MIT, Chennai</div>
+                    <div class="section-item">In-Plant Training under Embedded System in NXTGEN Instruments, Aug 2023</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="container">
+                <h2>Certifications & Courses</h2>
+                <div class="certifications section-list">
+                    <div class="section-item">Analog Simulation with PSpice, Cadence, Oct 2024</div>
+                    <div class="section-item">VLSI System on Chip Design, Maven Silicon, Oct 2024</div>
+                    <div class="section-item">MATLAB Onramp, MathWorks, Dec 2022</div>
+                    <div class="section-item">Full Stack Development, NASSCOM Foundation, 2018</div>
+                    <div class="section-item">Arduino Vs Raspberry Pi, Great Learning Academy, Apr 2024</div>
+                    <div class="section-item">IBM Enterprise Design Thinking Practitioner, Oct 2024</div>
+                    <div class="section-item">IBM Enterprise Design Thinking - Team Essentials for AI, Oct 2024</div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="contact">
+                    <div class="contact-info">
+                         <center>
+                        <p>439, Middle Street, Kaduvetty, Trichy</p>
+                        <p>Email: <a href="mailto:ragavib.21ece@kongu.edu">ragavib.21ece@kongu.edu</a></p>
+                        <p>Phone: <a href="tel:+919894913728">+91 9894913728</a></p>
+                    </div>
+                    <p>  <center>
+                        <a href="https://linkedin.com/in/ragavibalu" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/Ragavibalu" target="_blank">GitHub</a>
+</center>
+                    </p>
+                 </center>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+<center>
+
+            <p style="background-color:#4CAF50 ;">2024 All Rights Reserved By Authorized</p>
+</center>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+
+        </body>
+</html>
